@@ -3,18 +3,18 @@ import {
   Inject, NotFoundException, ConflictException,
   BadRequestException, Param, Patch, Post,
 } from '@nestjs/common';
-import { CreateTodoUseCase } from '../../application/use-cases/create-todo.use-case';
-import { CompleteTodoUseCase } from '../../application/use-cases/complete-todo.use-case';
-import { ReopenTodoUseCase } from '../../application/use-cases/reopen-todo.use-case';
-import { CreateTodoDto } from '../../application/dtos/todo.dto';
-import { ITodoRepository, TODO_REPOSITORY } from '../../domain/repositories/todo.repository.interface';
+import { CreateTodoUseCase } from '../../../application/use-cases/create-todo.use-case';
+import { CompleteTodoUseCase } from '../../../application/use-cases/complete-todo.use-case';
+import { ReopenTodoUseCase } from '../../../application/use-cases/reopen-todo.use-case';
+import { CreateTodoDto } from '../../../application/dtos/todo.dto';
+import { ITodoRepository, TODO_REPOSITORY } from '../../../domain/repositories/todo.repository.interface';
 import {
   TodoNotFoundError,
   TodoAlreadyCompletedError,
   TodoAlreadyOpenError,
   TodoTitleEmptyError,
   TodoTitleTooLongError,
-} from '../../domain/entities/todo.entity';
+} from '../../../domain/entities/todo.entity';
 
 @Controller('todos')
 export class TodosController {
