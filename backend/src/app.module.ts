@@ -5,9 +5,10 @@ import { CreateTodoUseCase } from './application/use-cases/create-todo.use-case'
 import { CompleteTodoUseCase } from './application/use-cases/complete-todo.use-case';
 import { ReopenTodoUseCase } from './application/use-cases/reopen-todo.use-case';
 import { TodosController } from './interfaces/http/controllers/todos.controller';
+import { HealthController } from './interfaces/http/controllers/health.controller';
 
 @Module({
-  controllers: [TodosController],
+  controllers: [TodosController, HealthController],
   providers: [
     { provide: TODO_REPOSITORY, useClass: InMemoryTodoRepository },
     CreateTodoUseCase,
@@ -15,4 +16,4 @@ import { TodosController } from './interfaces/http/controllers/todos.controller'
     ReopenTodoUseCase,
   ],
 })
-export class AppModule {}
+export class AppModule { }
